@@ -11,7 +11,7 @@
             {{#if feature_image}}
             <figure class="post-media">
                 <div class="u-placeholder rectangle">
-                    <a class="post-image-link" href="{{url}}">
+                    <a class="post-image-link" href="/{{slug}}">
                         <img class="post-image u-object-fit" src="{{img_url feature_image size="m"}}" alt="{{title}}" loading="lazy">
                     </a>
                 </div>
@@ -20,9 +20,9 @@
 
             <header class="post-header">
                 <h2 class="post-title">
-                    <a class="post-title-link" href="{{url}}">{{title}}</a>
+                    <a class="post-title-link" href="/{{slug}}">{{title}}</a>
                 </h2>
-                <time class="post-meta" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="DD MMM YYYY"}}</time>
+                <time class="post-meta" datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="DD MMM YYYY"}}</time>
             </header>
 
         </article>

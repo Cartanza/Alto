@@ -1,9 +1,8 @@
-{{!< default}}
-
+{{#*inline "body"}}
 <div class="content-area">
 <main class="site-main">
 
-    {{#tag}}
+    {{#with tag}}
         <section class="term gh-outer">
             {{#if feature_image}}
                 <div class="term-image-container u-placeholder">
@@ -15,11 +14,11 @@
                 <div class="term-description">{{description}}</div>
             </div>
         </section>
-    {{/tag}}
+    {{/with}}
 
     <div class="post-feed">
         {{#foreach posts}}
-            {{> "loop"}}
+            {{> partials/loop}}
         {{/foreach}}
     </div>
 
@@ -27,3 +26,5 @@
 
 </main>
 </div>
+{{/inline}}
+{{> default}}

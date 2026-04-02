@@ -3,7 +3,7 @@
     {{#if feature_image}}
     <figure class="post-media gh-canvas">
         <div class="u-placeholder horizontal kg-width-wide">
-            <a class="post-image-link" href="{{url}}">
+            <a class="post-image-link" href="/{{slug}}">
                 <img
                     class="post-image u-object-fit"
                     srcset="{{img_url feature_image size="s"}} 400w,
@@ -24,21 +24,21 @@
     <div class="gh-canvas">
         <header class="post-header">
             <h2 class="post-title">
-                <a class="post-title-link" href="{{url}}">{{title}}</a>
+                <a class="post-title-link" href="/{{slug}}">{{title}}</a>
             </h2>
             <div class="post-meta">
                 <span class="post-meta-item post-meta-date">
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at format="DD MMM YYYY"}}</time>
+                    <time datetime="{{date published_at format="YYYY-MM-DD"}}">{{date published_at format="DD MMM YYYY"}}</time>
                 </span>
                 {{#if reading_time}}
                     <span class="post-meta-item post-meta-length">{{reading_time}}</span>
                 {{/if}}
-                {{#if @site.comments_enabled}}
+                {{#if @root.site.comments_enabled}}
                     {{comment_count class="post-meta-item"}}
                 {{/if}}
-                {{#primary_tag}}
-                    <span class="post-meta-item post-meta-tags"><a class="post-tag post-tag-{{slug}}" href="{{url}}" title="{{name}}">{{name}}</a></span>
-                {{/primary_tag}}
+                {{#with primary_tag}}
+                    <span class="post-meta-item post-meta-tags"><a class="post-tag post-tag-{{slug}}" href="/{{slug}}" title="{{name}}">{{name}}</a></span>
+                {{/with}}
             </div>
         </header>
 
